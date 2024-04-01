@@ -10,6 +10,13 @@ app.use(
     })
 );
 
-app.use(express.json); //Middleware to parser JSON request body
+app.use(express.json()); //Middleware to parser JSON request body
+
+// Routes
+app.get('/', (req, res) => { // Define a route handler for the root URL
+    res.json({
+        message: 'API endpoint is working!'
+    }); // Send a JSON response
+});
 
 module.exports =app; //Export the app object for use in other modules
