@@ -65,5 +65,12 @@ const updateUser=async(req,res)=>{
     }
 
     res.status(200).json(user); //Return the user details
+}
 
+module.exports={
+    getUsers,
+    getUserById,
+    createUser,
+    deleteUser,
+    updateUser
 }

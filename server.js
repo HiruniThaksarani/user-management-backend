@@ -4,6 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const mongoose =require('mongoose');
+const userRoutes =require('./routes/users');
 
 const hostname='localhost';
 
@@ -17,6 +18,12 @@ app.use(
 );
 
 app.use(express.json()); //Middleware to parser JSON request body
+
+app.get('/',(req,res) => {
+    res.send('Welcome to the User Management API')
+});
+
+app.use('/api/users', userRoutes); // Use the userRoutes for request to the /user endpoint
 
 mongoose.connect(process.env.MONGO_URI)  //Connect to MongoDB
     .then(()=>{
