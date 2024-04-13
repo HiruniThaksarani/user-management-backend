@@ -6,7 +6,7 @@ const controller=require('./controller');
 app.use(cors()); //to allow cross-origin requests (different domain from the API server)
 
 app.use(
-    express.urlencoded({ /// Middleware to parse URL-encoded request body
+    express.urlencoded({ // Middleware to parse URL-encoded request body
         extended:true // Allow nested objects in query string
     })
 );
